@@ -20,6 +20,8 @@ For more details on model architectures and configurations, check the models dir
 
 ## Usage
 
+### Segmentation
+
 - Preprocessing: Extract layers of multi layer czi files with `layer_extraction_3D.py`. Create tiles using `tiling_3D.py`.
 - Predict blood vessels using `pred_stacks_ensemble.py`, choose the models to use.
 - Predict retinas using `pred_all_stacks.py` (choose corresponding model). Rescale all retinas using `rescale_all_stacks.py` before prediction.
@@ -27,4 +29,8 @@ For more details on model architectures and configurations, check the models dir
 - Training: You can train your own models using the corresponding training files on your own dataset.
 
 
-- Analysis: analysis of predictions can be done using the scripts in Analysis folder
+### Analysis
+
+All scripts related to analysis of the retinas are in the Analysis folder.
+
+- First align the layers using the first script ´area_fraction.ipynb´. Only run afterwards the other scripts.
