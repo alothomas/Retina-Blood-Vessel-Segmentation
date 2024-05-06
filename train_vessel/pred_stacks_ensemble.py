@@ -5,12 +5,12 @@ import torch
 from torch.utils.data import DataLoader
 from tifffile import imread, TiffWriter
 from skimage import exposure
-from utils_pred import PredCustomDataset, reconstruct_image_from_patches
+from models_vessel.utils_pred import PredCustomDataset, reconstruct_image_from_patches
 
 #from resnet50_unet import UNetWithResnet50Encoder
-from resnet152_attention_unet import RAUNet
-from resnet152_unet import UNetWithResnet152Encoder
-from resnet152_unet_SEB import UNetWithResnet152Encoder as UNetWithResnet152Encoder_SEB
+from models_vessel.resnet152_attention_unet import RAUNet
+from models_vessel.resnet152_unet import UNetWithResnet152Encoder
+from models_vessel.resnet152_unet_SEB import UNetWithResnet152Encoder as UNetWithResnet152Encoder_SEB
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.cuda.empty_cache()

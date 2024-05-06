@@ -11,7 +11,8 @@ from glob import glob
 import sys
 sys.path.append('E:/Retina-Segmentation/retina_masking')
 
-from resnet50 import UNetWithResnet50Encoder
+
+from models_retina.resnet50_unet import UNetWithResnet50Encoder
 from utils import BinaryLovaszHingeLoss, DiceLoss, JaccardLoss, dice_coefficient, show_images_and_masks
 import random
 
