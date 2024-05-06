@@ -36,5 +36,5 @@ Adapt the scripts with your folder structure.
 All scripts related to analysis of the retinas are in the Analysis folder.
 
 - Filtering of perfused areas can be done using `filtering_all.py`.
-- Skeleton analysis is done with ImageJ Fiji script, adapt the script to your fodler structure.
+- For Skeleton analysis, extract the layers of files using `skeleton_IJ.py`. Skeletonize with ImageJ Fiji script `macro_skeleton.ijm`, adapt the script to the folder structure.
 - Align the layers using the first script `area_fraction.ipynb`. Only run afterwards the other scripts.
