@@ -18,6 +18,12 @@ The project includes several models:
 
 For more details on model architectures and configurations, check the models directory.
 
+## Repository Structure
+- `Analysis/`: Analysis tools and scripts for post-processing.
+- `Preprocessing/`: Scripts for preprocessing.
+- `train_retina/`: training and prediction scripts for retina segmentation.
+- `train_vessels/`: training and prediction scripts for blood vessel segmentation.
+
 ## Usage
 
 Adapt the scripts with your folder structure.
