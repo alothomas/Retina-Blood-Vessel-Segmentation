@@ -20,6 +20,8 @@ For more details on model architectures and configurations, check the models dir
 
 ## Usage
 
+Adapt the scripts with your folder structure.
+
 ### Segmentation
 
 - Preprocessing: Extract layers of multi layer czi files with `layer_extraction_3D.py`. Create tiles using `tiling_3D.py`.
@@ -34,4 +36,5 @@ For more details on model architectures and configurations, check the models dir
 All scripts related to analysis of the retinas are in the Analysis folder.
 
 - Filtering of perfused areas can be done using `filtering_all.py`.
+- Skeleton analysis is done with ImageJ Fiji script, adapt the script to your fodler structure.
 - Align the layers using the first script `area_fraction.ipynb`. Only run afterwards the other scripts.
