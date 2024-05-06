@@ -21,5 +21,5 @@ For more details on model architectures and configurations, check the models dir
 ## Usage
 
 - Preprocessing: Extract layers of multi layer czi files with `layer_extraction_3D.py`. Create tiles using `tiling_3D.py`.
-- Predict blood vessels using pred_stacks, choose the model of your choice.
-- Predict retinas using pred_all_stacks.py (choose corresponding model). Rescale all retinas using rescale_all_stacks.py before prediction.
+- Predict blood vessels using `pred_stacks.py`, choose the model of your choice.
+- Predict retinas using `pred_all_stacks.py` (choose corresponding model). Rescale all retinas using `rescale_all_stacks.py` before prediction.
