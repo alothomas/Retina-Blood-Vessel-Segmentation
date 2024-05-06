@@ -6,6 +6,14 @@ from skimage import exposure
 from skimage import img_as_uint
 
 def rescale_images(source_dir, target_dir, size=(512, 512)):
+    """
+    Rescales the images in the source directory and saves the rescaled images in the target directory.
+
+    Args:
+        source_dir (str): The path to the source directory containing the images.
+        target_dir (str): The path to the target directory where the rescaled images will be saved.
+        size (tuple, optional): The desired size of the rescaled images. Defaults to (512, 512).
+    """
     subfolders = ['FG12', 'PBS', 'NG004', '11C7']
     for subfolder in subfolders:
         subfolder_path = os.path.join(source_dir, subfolder)

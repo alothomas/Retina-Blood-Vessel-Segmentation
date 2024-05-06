@@ -5,6 +5,18 @@ import cv2
 from scipy.ndimage import uniform_filter
 
 def apply_custom_filter_with_mask_convolution_optimized(image_array, window_size, threshold_percentage):
+    """
+    Apply a custom filter with mask convolution to the input image array.
+
+    Parameters:
+    image_array (ndarray): The input image array.
+    window_size (tuple): The size of the window for convolution.
+    threshold_percentage (float): The threshold percentage for filtering.
+
+    Returns:
+    ndarray: The mask indicating the removed windows.
+
+    """
     threshold = window_size[0] * window_size[1] * threshold_percentage
     binary_mask = (image_array == 255).astype(np.float32)
     white_pixels_count = uniform_filter(binary_mask, size=window_size, mode='constant', cval=0)
@@ -13,6 +25,20 @@ def apply_custom_filter_with_mask_convolution_optimized(image_array, window_size
     return removed_windows_mask
 
 def process_image(image_path, binary_image_path, output_dir, subject_name, window_size, threshold_percentage):
+    """
+    Process the input image and perform blood vessel segmentation.
+
+    Args:
+        image_path (str): The path to the original image.
+        binary_image_path (str): The path to the binary image.
+        output_dir (str): The directory to save the processed images.
+        subject_name (str): The name of the subject.
+        window_size (int): The size of the window for filtering.
+        threshold_percentage (float): The threshold percentage for filtering.
+
+    Returns:
+        None
+    """
     print(f'Processing image {subject_name}')
 
     layers_vessel = []

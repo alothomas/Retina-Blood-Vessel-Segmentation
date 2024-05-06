@@ -5,6 +5,21 @@ from tifffile import imread
 from skimage import exposure
 
 def extract_overlapping_patches(image, patch_size=512, overlap=0.3):
+    """
+    Extracts overlapping patches from an image.
+
+    Parameters:
+    - image: numpy.ndarray
+        The input image from which patches will be extracted.
+    - patch_size: int, optional
+        The size of each patch. Default is 512.
+    - overlap: float, optional
+        The overlap between patches as a fraction of the patch size. Default is 0.3.
+
+    Returns:
+    - patches: list
+        A list of extracted patches from the image.
+    """
     stride = int(patch_size * (1 - overlap))
     patches = []
     for y in range(0, image.shape[0] - patch_size + 1, stride):
@@ -39,7 +54,7 @@ for input_dir in input_dirs:
     
     for filename in filenames:
         file_path = os.path.join(input_dir, filename)
-        multi_layer_image = imread(file_path)  # Assuming this reads the image correctly as a multi-layer TIFF
+        multi_layer_image = imread(file_path) 
         
         # Extract the base filename without extension to use in output path
         base_filename = os.path.splitext(filename)[0]

@@ -5,6 +5,16 @@ import os
 from skimage import io
 
 def process_images(image_dir, output_dir):
+    """
+    Process CZI images in the specified directory and extract layers.
+    
+    Args:
+        image_dir (str): The directory containing CZI image files.
+        output_dir (str): The directory to save the extracted layers as multi-page TIFF files.
+    
+    Returns:
+        None
+    """
     os.makedirs(output_dir, exist_ok=True)
     
     # List all CZI files in the directory

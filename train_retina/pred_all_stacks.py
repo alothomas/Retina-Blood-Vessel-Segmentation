@@ -11,7 +11,7 @@ from glob import glob
 import sys
 sys.path.append('E:/Retina-Segmentation/retina_masking')
 
-from resnet50_unet import UNetWithResnet50Encoder
+from resnet50 import UNetWithResnet50Encoder
 from utils import BinaryLovaszHingeLoss, DiceLoss, JaccardLoss, dice_coefficient, show_images_and_masks
 import random
 
@@ -23,6 +23,15 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
 class PredictionDataset(Dataset):
+    """
+    Dataset class for prediction.
+
+    Args:
+        root_dir (str): Root directory of the dataset.
+        augment (bool, optional): Whether to apply data augmentation. Defaults to False.
+        denoise (bool, optional): Whether to apply denoising. Defaults to False.
+    """
+
     def __init__(self, root_dir, augment=False, denoise=False):
         self.root_dir = root_dir
         self.denoise = denoise
@@ -63,6 +72,15 @@ def ensure_dir(file_path):
         os.makedirs(directory)
 
 def process_and_save_masks(model, dataset, original_dir_base, target_dir_base):
+    """
+    Process and save masks for a given model, dataset, original directory base, and target directory base.
+
+    Args:
+        model (torch.nn.Module): The model used for mask prediction.
+        dataset (torch.utils.data.Dataset): The dataset containing images, conditions, subjects, and layer indices.
+        original_dir_base (str): The base directory path where the original images are stored.
+        target_dir_base (str): The base directory path where the predicted masks will be saved.
+    """
     model.eval()
     for image, condition, subject, layer_index in dataset:
         image = image.unsqueeze(0).to(device)
