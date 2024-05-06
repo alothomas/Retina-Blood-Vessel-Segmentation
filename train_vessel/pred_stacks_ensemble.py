@@ -21,15 +21,15 @@ name_model2 = 'resnet152_SEB_V5'
 name_model3 = 'best_model_DRIVE_tuned152'
 
 model1 = RAUNet(num_classes=1, num_channels=3, pretrained=True).to(device)
-model1.load_state_dict(torch.load(f'output_NEW/{name_model1}.pth'))
+model1.load_state_dict(torch.load(rf'N:\00_Exchange\Alois\Models\Blood vessel models\{name_model1}.pth'))
 model1.eval()
 
 model2 = UNetWithResnet152Encoder_SEB(n_classes=1).to(device)
-model2.load_state_dict(torch.load(f'output_NEW/{name_model2}.pth'))
+model2.load_state_dict(torch.load(rf'N:\00_Exchange\Alois\Models\Blood vessel models\{name_model2}.pth'))
 model2.eval()
 
 model3 = UNetWithResnet152Encoder(n_classes=1).to(device)
-model3.load_state_dict(torch.load(f'output_dir/{name_model3}.pth'))
+model3.load_state_dict(torch.load(rf'N:\00_Exchange\Alois\Models\Blood vessel models\{name_model3}.pth'))
 model3.eval()
 
 models = [model1, model2, model3]

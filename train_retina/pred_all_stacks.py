@@ -111,7 +111,7 @@ def process_and_save_masks(model, dataset, original_dir_base, target_dir_base):
             tiff.imwrite(mask_tiff_path, mask_tiff, dtype=np.uint8)
 
 model = UNetWithResnet50Encoder(n_classes=1).to(device)
-model.load_state_dict(torch.load('E:\\Retina-Segmentation\\retina_masking\\output_dir\\best_model_retina_fine_tuned.pth'))
+model.load_state_dict(torch.load(r'N:\00_Exchange\Alois\Models\Blood vessel models\best_model_retina_fine_tuned.pth'))
 
 os.chdir('N:\\00_Exchange\\Alois')
 
