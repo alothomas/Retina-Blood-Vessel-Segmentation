@@ -33,4 +33,5 @@ For more details on model architectures and configurations, check the models dir
 
 All scripts related to analysis of the retinas are in the Analysis folder.
 
-- First align the layers using the first script ´area_fraction.ipynb´. Only run afterwards the other scripts.
+- Filtering of perfused areas can be done using `filtering_all.py`.
+- Align the layers using the first script `area_fraction.ipynb`. Only run afterwards the other scripts.
