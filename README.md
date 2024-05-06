@@ -25,3 +25,6 @@ For more details on model architectures and configurations, check the models dir
 - Predict retinas using `pred_all_stacks.py` (choose corresponding model). Rescale all retinas using `rescale_all_stacks.py` before prediction.
 
 - Training: You can train your own models using the corresponding training files on your own dataset.
+
+
+- Analysis: analysis of predictions can be done using the scripts in Analysis folder
