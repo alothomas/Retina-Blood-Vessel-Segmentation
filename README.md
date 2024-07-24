@@ -24,6 +24,14 @@ For more details on model architectures and configurations, check the models dir
 - `train_retina/`: Training and prediction scripts for retina segmentation.
 - `train_vessels/`: Training and prediction scripts for blood vessel segmentation.
 
+## Requirements
+
+To set up the required environment, ensure you have Python 3.12 installed. Install the necessary libraries using the requirements.txt file
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Usage
 
 Adapt the scripts with your folder structure.
